@@ -1,0 +1,11 @@
+{
+  "name": "nodejs_tut",
+  "version": "1.0.0",
+  "description": "nodejs udemy coursework",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Xzahn",
+  "license": "MIT"
+}
