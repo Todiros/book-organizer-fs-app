@@ -1,6 +1,20 @@
-const http = require('http')
-const routes = require('./routes')
+const express = require('express')
 
-const server = http.createServer(routes)
+const hostname = '127.0.0.1'
+const port = 5000
 
-server.listen(5000)
+const app = express()
+
+app.use((req, res, next) => {
+    console.log("In the middleware!")
+    next() // Allows the request to continue to the next middleware in line
+})
+
+app.use((req, res, next) => {
+    console.log("In the next middleware!")
+    // ...
+})
+
+app.listen(port, hostname, () => {
+    console.log(`Server running at http://${hostname}:${port}/`)
+})
