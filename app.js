@@ -5,14 +5,12 @@ const port = 5000
 
 const app = express()
 
-app.use((req, res, next) => {
-    console.log("In the middleware!")
-    next() // Allows the request to continue to the next middleware in line
+app.use('/products', (req, res, next) => {
+    res.send('<h1>Products Y\'all!</h1>')
 })
 
-app.use((req, res, next) => {
-    console.log("In the next middleware!")
-    // ...
+app.use('/', (req, res, next) => {
+    res.send('<h1>Sup\' Express!</h1>')
 })
 
 app.listen(port, hostname, () => {
