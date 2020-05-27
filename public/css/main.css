@@ -1,0 +1,10 @@
+html, body, a {
+    background: #333;
+    color: #eee;
+}
+
+button {
+    background: transparent;
+    color: inherit;
+    border: 2px solid #eee;
+}
