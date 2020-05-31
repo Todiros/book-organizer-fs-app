@@ -10,6 +10,8 @@ const port = 5000
 
 const app = express()
 
+app.set('view engine', 'pug')
+
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(express.static(path.join(__dirname, 'public')))
 
