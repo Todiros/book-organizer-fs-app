@@ -1,20 +1,7 @@
-<!DOCTYPE html>
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title #{pageTitle}
-        link(rel="stylesheet", href="/css/main.css")
-    body
-        header
-            nav
-                ul
-                    li
-                        a(href="/") Shop
-                    li
-                        a.active(href="/admin/add-product") Add Product
+extends layouts/main-layout.pug
 
-        main
-            form(action="/admin/add-product", method="post")
-                input(type="text", name="title", id="product-name")
-                button(type="submit") Add Product
+block content
+    main
+        form(action="/admin/add-product", method="post")
+            input(type="text", name="title", id="product-name")
+            button(type="submit") Add Product
