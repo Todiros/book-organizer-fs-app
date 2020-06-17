@@ -10,10 +10,11 @@ html(lang="en")
             nav
                 ul
                     li
-                        a.active(href="/") Shop
+                        a(href="/") Shop
                     li
-                        a(href="/admin/add-product") Add Product
+                        a.active(href="/admin/add-product") Add Product
 
         main
-            h1 Products
-            p List of all the products...
+            form(action="/admin/add-product", method="post")
+                input(type="text", name="title", id="product-name")
+                button(type="submit") Add Product

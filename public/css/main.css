@@ -1,5 +1,5 @@
 html, body, a {
-    background: #333;
+    background: #222;
     color: #eee;
 }
 
@@ -7,4 +7,12 @@ button {
     background: transparent;
     color: inherit;
     border: 2px solid #eee;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover, a.active {
+    color: darkgoldenrod;
 }

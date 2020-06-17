@@ -3,10 +3,8 @@ const express = require('express')
 
 const router = express.Router()
 
-const rootDir = require('../util/path')
-
 router.get('/', (req, res) => {
-    res.render('shop', { docTitle: 'Shop' })
+    res.render('shop', { pageTitle: 'Shop' })
 })
 
 module.exports = router
