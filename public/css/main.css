@@ -1,6 +1,7 @@
 html, body, a {
     background: #222;
     color: #eee;
+    font-size: 1rem;
 }
 
 input {
@@ -20,4 +21,34 @@ a {
 
 a:hover, a.active {
     color: darkgoldenrod;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 1.2rem;
+}
+
+.page-title {
+    text-transform: uppercase;
+    color: darkgoldenrod;
+}
+
+#products-container {
+    display: flex;
+    gap: 2em;
+    justify-content: start;
+}
+
+.product-item {
+    border: 1px solid darkgoldenrod;
+    width: min-content;
+    text-align: center;
+}
+
+.buy-btn {
+    border: 1px solid darkgoldenrod;
+    margin: 1em;
 }
