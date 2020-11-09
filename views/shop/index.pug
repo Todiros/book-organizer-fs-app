@@ -19,6 +19,7 @@ block content
                             h3.product-price $#{product.price}
                             p.product-description #{product.description}
                         .card-actions
-                            button.buy-btn Add To Cart
+                            form(action="/add-to-cart" method="POST" class="add-to-cart-form")
+                                button.buy-btn Add To Cart
         else
             h2 No Products... :(
