@@ -1,0 +1,16 @@
+#add-product-input-wrapper {
+    display: block;
+    margin: 10vh auto;
+}
+
+.add-product-inputs {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 3vh auto;
+    width: 25vw;
+}
+
+.product-submit-button {
+    width: fit-content;
+    margin: 5vh auto;
+}

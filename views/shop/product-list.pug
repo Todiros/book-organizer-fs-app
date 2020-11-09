@@ -1,0 +1,26 @@
+extends ../layouts/main-layout.pug
+
+block styles
+    link(rel="stylesheet", href="/css/pages/product-list.css")
+
+block content
+    main#products-page
+        h1.page-title products
+        if hasProducts
+            section#products-container
+                each product in prods
+                    article.product-item
+                        header.card-header
+                            h2.product-title #{product.title}
+                        // div
+                        .card-image
+                            img(src=product.imageUrl, alt=product.title)
+                        .card-content
+                            h3.product-price $#{product.price}
+                            p.product-description #{product.description}
+                        .card-actions
+                            button.buy-btn Add To Cart
+        else
+            h2 No Products... :(
+
+            

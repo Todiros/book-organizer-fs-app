@@ -1,3 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+    /* height: calc(100vh - 16px);
+    width: calc(100vw - 16px); */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 html, body, a {
     background: #222;
     color: #eee;
@@ -11,8 +25,15 @@ input {
 button {
     background: transparent;
     color: darkgoldenrod;
-    border: 1px solid #eee;
-    padding: 0.5em
+    border: 1px solid darkgoldenrod;
+    padding: 0.5em;
+    font-weight: bold;
+}
+
+button:hover {
+    background: darkgoldenrod;
+    color: #222;
+    border: 1px solid darkgoldenrod;
 }
 
 a {
@@ -36,19 +57,13 @@ h2 {
     color: darkgoldenrod;
 }
 
-#products-container {
-    display: flex;
-    gap: 2em;
-    justify-content: start;
+nav ul {
+    padding: 0;
+    margin: 1em;
 }
 
-.product-item {
-    border: 1px solid darkgoldenrod;
-    width: min-content;
-    text-align: center;
-}
-
-.buy-btn {
-    border: 1px solid darkgoldenrod;
+nav ul li {
+    list-style: none;
+    display: inline-block;
     margin: 1em;
 }
