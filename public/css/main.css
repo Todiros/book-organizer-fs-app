@@ -40,7 +40,7 @@ a {
     text-decoration: none;
 }
 
-a:hover, a.active {
+nav a:hover, a.active {
     color: darkgoldenrod;
 }
 
@@ -66,4 +66,25 @@ nav ul li {
     list-style: none;
     display: inline-block;
     margin: 1em;
+}
+
+.buy-btn {
+    margin: 1em;
+}
+
+.link {
+    color: darkgoldenrod;
+}
+
+.link, .simple-btn {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: inherit;
+    text-transform: uppercase;
+}
+
+.link:hover, .simple-btn:hover {
+    background: none;
+    border: none;
+    color: #eee;
 }

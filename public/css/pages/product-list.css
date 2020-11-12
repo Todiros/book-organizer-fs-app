@@ -27,7 +27,10 @@
     height: 400px;
 }
 
-.buy-btn {
-    border: 1px solid darkgoldenrod;
-    margin: 1em;
+.card-actions {
+    padding-bottom: 1em;
+}
+
+.details-btn {
+    font-size: 0.8rem;
 }

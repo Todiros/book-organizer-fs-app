@@ -21,5 +21,6 @@ block content
                         .card-actions
                             form(action="/add-to-cart/"+product.id method="POST" class="add-to-cart-form")
                                 button.buy-btn Add To Cart
+                            a(href="/products/"+product.id class="link details-btn") Details
         else
             h2 No Products... :(
