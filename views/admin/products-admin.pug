@@ -20,10 +20,9 @@ block content
                             h3.product-price $#{product.price}
                             p.product-description #{product.description}
                         .card-actions
-                            a(href="/admin/edit-product" class="link edit-btn") Edit
-                            form(action="/admin/delete-product" method="POST" class="delete-product-form")
+                            form(action="/admin/edit-product/"+product.id method="GET" class="edit-product-form")
+                                button(type="submit", class="simple-btn edit-btn") Edit
+                            form(action="/admin/delete-product/"+product.id method="POST" class="delete-product-form")
                                 button(type="submit", class="simple-btn delete-btn") Delete
         else
-            h2 No Products... :(
-
-            
+            h2 No Products... :( 

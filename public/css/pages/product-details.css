@@ -1,0 +1,14 @@
+#product-details-container {
+    padding: 2em 5em 0 5em;
+}
+
+.product-title {
+    margin: 0;
+    padding-bottom: 2em;
+    color: darkgoldenrod;
+    border-bottom: 1px solid #eee;
+}
+
+.product-image {
+    margin: 1em;
+}

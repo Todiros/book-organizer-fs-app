@@ -1,0 +1,15 @@
+block card
+    h1.page-title products
+    if hasProducts
+        section#products-container
+            each product in prods
+                article.product-item
+                    header.card-header
+                        h2.product-title #{product.title}
+                    // div
+                    .card-image
+                        img(src=product.imageUrl, alt=product.title)
+                    .card-content
+                        h3.product-price $#{product.price}
+                        p.product-description #{product.description}
+                    .card-actions

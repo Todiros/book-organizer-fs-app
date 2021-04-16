@@ -1,0 +1,6 @@
+extends ../shop/product-list.pug
+
+block addToCartButton
+    form(action="/cart" method="POST" class="add-to-cart-form")
+        input(type="hidden", name="productId" value=product.id)
+        button.buy-btn Add To Cart

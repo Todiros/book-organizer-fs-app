@@ -6,7 +6,7 @@
     border-top: 1px solid darkgoldenrod;
 }
 
-.delete-btn {
+.delete-btn, .edit-btn {
     border: none;
     padding: 0;
 }
