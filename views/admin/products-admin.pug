@@ -17,12 +17,13 @@ block content
                         .card-image
                             img(src=product.imageUrl, alt=product.title)
                         .card-content
+                            h5.product-description #{product.id}
                             h3.product-price $#{product.price}
                             p.product-description #{product.description}
                         .card-actions
-                            form(action="/admin/edit-product/"+product.id method="GET" class="edit-product-form")
+                            form(action=`/admin/edit-product/${product.id}?edit=true` method="GET" class="edit-product-form")
                                 button(type="submit", class="simple-btn edit-btn") Edit
-                            form(action="/admin/delete-product/"+product.id method="POST" class="delete-product-form")
+                            form(action=`/admin/delete-product/${product.id}` method="POST" class="delete-product-form")
                                 button(type="submit", class="simple-btn delete-btn") Delete
         else
             h2 No Products... :( 

@@ -6,6 +6,7 @@ block styles
 block content
     main
         form(action="/admin/edit-product", method="post", id="add-product-input-wrapper")
+            input(type="hidden" name="productId" value=product.id)
             input(type="text", name="title", id="title", class="add-product-inputs", placeholder="NAME", value=product.title) 
             input(type="text", name="imageUrl", id="imageUrl", class="add-product-inputs", placeholder="IMAGE URL", value=product.imageUrl)
             input(type="number", name="price", id="price", class="add-product-inputs", placeholder="PRICE", step="0.01", value=product.price)
