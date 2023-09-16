@@ -3,7 +3,8 @@
     margin: 10vh auto;
 }
 
-.add-product-inputs {
+.add-product-inputs, 
+.edit-product-inputs {
     display: flex;
     flex-wrap: wrap;
     margin: 3vh auto;

@@ -14,11 +14,10 @@ exports.postAddProduct = (req, res, next) => {
     const description = req.body.description;
     const product = new Product(null, title, imageUrl, price, description)
     product.save()
-    res.redirect('/')
+    res.redirect('/admin/products')
 }
 
 exports.getEditProduct = (req, res) => {
-    console.log(req.query.edit)
     const prodId = req.params.productId;
 
     Product.findById(prodId, product => {
@@ -31,22 +30,23 @@ exports.getEditProduct = (req, res) => {
             product: product
         })
     })
-}   
+}
 
 exports.postEditProduct = (req, res) => {
     const prodId = req.body.productId
     const updatedTitle = req.body.title
     const updatedPrice = req.body.price
-    const updatedImageUrl = req.body.imageUrl 
+    const updatedImageUrl = req.body.imageUrl
     const updatedDesc = req.body.description
     const updatedProduct = new Product(prodId, updatedTitle, updatedImageUrl, updatedPrice, updatedDesc)
+    console.log('New Product: ', updatedProduct)
     updatedProduct.save()
     res.redirect('/admin/products')
 }
 
 exports.getProducts = (req, res) => {
     Product.fetchAll(products => {
-        res.render('admin/products-admin', { 
+        res.render('admin/products-admin', {
             path: '/admin/products',
             pageTitle: 'Admin Products',
             prods: products,
@@ -58,6 +58,20 @@ exports.getProducts = (req, res) => {
 exports.postDeleteProduct = (req, res) => {
     const productId = req.params.productId;
 
-    console.log(productId)
-    res.redirect('/')
+    Product.findById(productId, product => {
+        if (!product)
+            return res.redirect('/admin/products')
+
+
+        const productToDelete = new Product(
+            product.id,
+            product.title,
+            product.imageUrl,
+            product.price,
+            product.description
+        )
+        productToDelete.delete()
+    })
+
+    res.redirect('/admin/products')
 }
