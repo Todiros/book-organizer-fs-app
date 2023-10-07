@@ -1,13 +1,19 @@
-#products-page {
+#products-page, #my-cart {
+    position: relative;
+    max-width: 100vh;
+    max-height: 100%;
+    margin: 0 auto;
     text-align: center;
-    width: 100%;
 }
 
 #products-container {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column-reverse;
     gap: 2em;
-    justify-content: space-evenly;
+    height: calc(8600px - 100vw * 3);
+    justify-content: flex-end;
+    align-content: center;
 }
 
 .page-title {

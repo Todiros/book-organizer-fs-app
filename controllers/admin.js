@@ -38,8 +38,8 @@ exports.postEditProduct = (req, res) => {
     const updatedPrice = req.body.price
     const updatedImageUrl = req.body.imageUrl
     const updatedDesc = req.body.description
-    const updatedProduct = new Product(prodId, updatedTitle, updatedImageUrl, updatedPrice, updatedDesc)
-    console.log('New Product: ', updatedProduct)
+    const updatedProduct = new Product(parseInt(prodId), updatedTitle, updatedImageUrl, updatedPrice, updatedDesc)
+
     updatedProduct.save()
     res.redirect('/admin/products')
 }
@@ -57,21 +57,6 @@ exports.getProducts = (req, res) => {
 
 exports.postDeleteProduct = (req, res) => {
     const productId = req.params.productId;
-
-    Product.findById(productId, product => {
-        if (!product)
-            return res.redirect('/admin/products')
-
-
-        const productToDelete = new Product(
-            product.id,
-            product.title,
-            product.imageUrl,
-            product.price,
-            product.description
-        )
-        productToDelete.delete()
-    })
-
+    Product.deleteById(parseInt(productId))
     res.redirect('/admin/products')
 }

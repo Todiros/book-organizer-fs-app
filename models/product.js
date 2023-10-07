@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const Cart = require('./cart')
 
 const _PATH = path.join(
     path.dirname(require.main.filename),
@@ -33,7 +34,8 @@ module.exports = class Product {
                 prod => prod.id === this.id
             )
 
-            console.log('ProductID: ', existingProductIndex)
+            console.log('Product Index: ', existingProductIndex)
+            console.log('Product ID: ', this.id)
 
             if (existingProductIndex === -1) {
                 products.push(this)
@@ -70,6 +72,19 @@ module.exports = class Product {
             } else {
                 console.log('ERROR, the following ID is not found: ', this.id)
             }
+        })
+    }
+
+    static deleteById(id) {
+        getProductsFromFile(products => {
+            const product = products.find(prod => parseInt(prod.id) === id)
+            const updatedProducts = products.filter(prod => prod.id !== id)
+
+            fs.writeFile(_PATH, JSON.stringify(updatedProducts), err => {
+                if (!err) {
+                    Cart.deleteProduct(id, parseInt(product.price))
+                }
+            })
         })
     }
 

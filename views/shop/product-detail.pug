@@ -9,6 +9,4 @@ block content
         img(src=product.imageUrl, alt=product.title class="product-image")
         h3.product-price $#{product.price}
         p.product-description #{product.description}
-        form(action="/cart" method="POST" class="add-to-cart-form")
-            input(type="hidden", name="productId" value=product.id)
-            button.buy-btn Add To Cart
+        include ../layouts/add-to-cart-button.pug

@@ -1,4 +1,31 @@
 extends ../layouts/main-layout.pug
 
+block styles
+    link(rel="stylesheet", href="/css/pages/product-list.css")
+
 block content
-    h1 My Cart
+    main#my-cart
+        h1.page-title My Cart
+        if hasProducts
+            section#products-container
+                h2 Total Price: #{totalPrice}
+                each product in cart
+                    article.product-item
+                        header.card-header
+                            h2.product-title #{product.title}
+                        // div
+                        .card-image
+                            img(src=product.imageUrl, alt=product.title)
+                        .card-content
+                            h3.product-price $#{product.price}
+                        .card-actions
+                            form(action=`/remove-from-cart` method="POST" class="delete-product-form")
+                                input(type="hidden", name="productId" value=product.id)
+                                input(type="hidden", name="totalPrice" value=totalPrice)
+                                button(type="submit", class="simple-btn remove-btn") Remove
+                            a(href="/products/"+product.id class="link details-btn") Details
+        else
+            h2(style='white-space:pre;')
+                | Your cart is empty :(
+                |
+                | Try adding some #[a(href='/products', class=(path === '/products' ? 'active' : '')) Products]

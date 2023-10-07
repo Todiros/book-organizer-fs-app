@@ -18,11 +18,7 @@ block content
                         .card-content
                             h3.product-price $#{product.price}
                         .card-actions
-                            form(action="/cart" method="POST" class="add-to-cart-form")
-                                input(type="hidden", name="productId" value=product.id)
-                                button.buy-btn Add To Cart
+                            include ../layouts/add-to-cart-button.pug
                             a(href="/products/"+product.id class="link details-btn") Details
         else
             h2 No Products... :(
-
-            
