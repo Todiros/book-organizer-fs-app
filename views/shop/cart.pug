@@ -6,9 +6,9 @@ block styles
 block content
     main#my-cart
         h1.page-title My Cart
+        h2 Total Price: #{totalPrice}
         if hasProducts
             section#products-container
-                h2 Total Price: #{totalPrice}
                 each product in cart
                     article.product-item
                         header.card-header
