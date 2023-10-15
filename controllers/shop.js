@@ -74,8 +74,8 @@ exports.postCart = (req, res) => {
 }
 
 exports.postRemoveFromCart = (req, res) => {
-    const productId = req.body.productId;
-    const totalPrice = req.body.totalPrice;
+    const productId = parseInt(req.body.productId)
+    const totalPrice = parseInt(req.body.totalPrice)
 
     Cart.deleteProduct(productId, totalPrice)
 

@@ -6,8 +6,8 @@ block styles
 block content
     main#my-cart
         h1.page-title My Cart
-        h2 Total Price: #{totalPrice}
         if hasProducts
+            h2 Total Price: #{totalPrice}
             section#products-container
                 each product in cart
                     article.product-item
@@ -19,7 +19,7 @@ block content
                         .card-content
                             h3.product-price $#{product.price}
                         .card-actions
-                            form(action=`/remove-from-cart` method="POST" class="delete-product-form")
+                            form(action=`/cart/remove` method="POST" class="delete-product-form")
                                 input(type="hidden", name="productId" value=product.id)
                                 input(type="hidden", name="totalPrice" value=totalPrice)
                                 button(type="submit", class="simple-btn remove-btn") Remove
