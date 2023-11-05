@@ -21,7 +21,7 @@ block content
                         .card-actions
                             form(action=`/cart/remove` method="POST" class="delete-product-form")
                                 input(type="hidden", name="productId" value=product.id)
-                                input(type="hidden", name="totalPrice" value=totalPrice)
+                                input(type="hidden", name="productPrice" value=product.price)
                                 button(type="submit", class="simple-btn remove-btn") Remove
                             a(href="/products/"+product.id class="link details-btn") Details
         else

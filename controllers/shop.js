@@ -75,9 +75,9 @@ exports.postCart = (req, res) => {
 
 exports.postRemoveFromCart = (req, res) => {
     const productId = parseInt(req.body.productId)
-    const totalPrice = parseInt(req.body.totalPrice)
+    const productPrice = parseInt(req.body.productPrice)
 
-    Cart.deleteProduct(productId, totalPrice)
+    Cart.deleteProduct(productId, productPrice)
 
     res.redirect('/cart')
 }

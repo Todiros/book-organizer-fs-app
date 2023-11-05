@@ -52,14 +52,11 @@ module.exports = class Cart {
                 return
             }
             const updatedCart = { ...JSON.parse(fileContent) }
-            const product = updatedCart.products.find(prod => prod.id === id)
-            let productQty = product.qty
 
             updatedCart.products = updatedCart.products.filter(prod => {
                 if (prod.qty == 1)
                     return prod.id !== id
                 else {
-                    productQty--
                     return prod.qty--
                 }
             })
