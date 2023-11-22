@@ -61,7 +61,6 @@ module.exports = class Cart {
                 }
             })
 
-
             updatedCart.totalPrice = updatedCart.totalPrice - productPrice;
 
             fs.writeFile(_PATH, JSON.stringify(updatedCart), err => {
