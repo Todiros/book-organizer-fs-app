@@ -54,6 +54,7 @@ module.exports = class Product {
         })
     }
 
+    // unused
     delete() {
         getProductsFromFile(products => {
             const existingProductIndex = products.findIndex(
@@ -75,6 +76,7 @@ module.exports = class Product {
         })
     }
 
+    // currently used
     static deleteById(id) {
         getProductsFromFile(products => {
             const product = products.find(prod => parseInt(prod.id) === id)
