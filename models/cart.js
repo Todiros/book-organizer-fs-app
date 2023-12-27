@@ -54,10 +54,13 @@ module.exports = class Cart {
             const updatedCart = { ...JSON.parse(fileContent) }
 
             updatedCart.products = updatedCart.products.filter(prod => {
-                if (prod.qty == 1)
+                if (prod.qty === 1)
                     return prod.id !== id
-                else {
-                    return prod.qty--
+                else if (prod.id === id) {
+                    prod.qty--
+                    return prod
+                } else {
+                    return prod
                 }
             })
 
